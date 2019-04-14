@@ -1,0 +1,32 @@
+#albumName {
+    position: relative;
+}
+
+.title {
+    width: 750px;
+    margin: 10px auto;
+}
+
+.albumTitle {
+    width: 100%;
+    text-align: center;
+}
+
+.sideBar {
+    position: absolute;
+    top: 100px;
+    left: 80px;
+}
+
+.listAlbums {
+    list-style: none;
+}
+
+.albumNamesList {
+    margin: 10px 0;
+    width: 200px;
+    height: 32px;
+    background-color: mediumpurple;
+    padding: 5px;
+    border-radius: 5px;
+}

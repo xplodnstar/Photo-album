@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://localhost:3000/image/25 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <link rel="manifest" href="http://localhost:3000/manifest.json">
+  <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>Nova's Photo Album</title>
+<style type="text/css">html {
+  box-sizing:border-box;
+}
+
+*, *::before, *::after {
+  box-sizing:inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: indigo;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+</style><style type="text/css">.albumList {
+    width: 750px;
+    margin: 10px auto;
+
+}
+
+.title {
+    width: 100%;
+    height: 100px;
+    background-color: mediumpurple; 
+    padding: 10px 0;
+    position: relative;
+}
+
+.littleWords {
+    position: absolute;
+    top: 46px;
+    left: 210px;
+}
+
+.bigWords {
+    text-align: center;
+}
+
+.displayAlbums {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+}
+
+.albumNames {
+    width: 250px;
+    height: 300px;
+    padding: 25px;
+    word-wrap: break-word;
+    position: relative;
+    border: solid 1px #ccc;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: indigo;
+}
+
+.albumArt {
+    width: 200px;
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    margin: 0 10px 10px;
+}</style><style type="text/css">#albumName {
+    position: relative;
+}
+
+.title {
+    width: 750px;
+    margin: 10px auto;
+}
+
+.albumTitle {
+    width: 100%;
+    text-align: center;
+}
+
+.sideBar {
+    position: absolute;
+    top: 100px;
+    left: 80px;
+}
+
+.listAlbums {
+    list-style: none;
+}
+
+.albumNamesList {
+    margin: 10px 0;
+    width: 200px;
+    height: 32px;
+    background-color: mediumpurple;
+    padding: 5px;
+    border-radius: 5px;
+}
+</style><style type="text/css">.imageList {
+    width: 750px;
+    margin: 10px auto;
+}
+
+.displayImages {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+}
+
+.imageArt {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.imageNames {
+    width: 250px;
+    height: 400px;
+    padding: 25px;
+    text-align: center;
+
+    border: solid 1px #ccc;
+}
+
+</style><style type="text/css">.imageTitle {
+    width: 100%;
+    text-align: center;
+    
+}
+
+.picBox {
+    width: 750px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+
+    margin: auto;
+}
+
+.lArr {
+    position: absolute;
+    top: 200px;
+    left: 263px;
+    font-size: 50px;
+    font-weight: bold;
+    /* margin: 50px 10px; */
+}
+
+.imageBox {
+    width: 750px;
+    position: relative;    
+    /* transform: translateX(750px); */
+    transition: -webkit-transform ease-out 1s;
+    transition: transform ease-out 1s;
+    transition: transform ease-out 1s, -webkit-transform ease-out 1s;
+}
+
+#picture {
+    width: 100%;
+
+}
+
+.rArr {
+    position: absolute;
+    top: 200px;
+    left: 1100px;
+    font-size: 50px;
+    font-weight: bold;        
+    /* margin: 50px 10px; */
+}</style></head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"><div id="page"><div class="box"><div class="title"><h1 class="imageTitle">Come for it!</h1></div><div class="picBox"><div class="lArr"><a href="http://localhost:3000/image/function%20()%20%7B%20%20%20%20%20%20if%20(_this.state.current%20===%200)%20return;%20%20%20%20%20%20_this.setState(function%20(prevState)%20%7B%20%20%20%20%20%20%20%20return%20%7B%20%20%20%20%20%20%20%20%20%20current:%20prevState.current%20-%201,%20%20%20%20%20%20%20%20%20%20value:%20prevState.value%20+%20_this.slideWidth()%20%20%20%20%20%20%20%20%7D;%20%20%20%20%20%20%7D);%20%20%20%20%7D"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"></path></svg></a></div><div class="imageBox"><img src="./Nova&#39;s Photo Album_files/wonder-woman-gal-gadot.jpg" alt="Come for it!" id="picture"></div><div class="rArr"><a href="http://localhost:3000/image/function%20()%20%7B%20%20%20%20%20%20if%20(_this.state.current%20===%20_this.state.images.length%20-%201)%20%7B%20%20%20%20%20%20%20%20return%20_this.setState(%7B%20%20%20%20%20%20%20%20%20%20current:%200,%20%20%20%20%20%20%20%20%20%20value:%200%20%20%20%20%20%20%20%20%7D);%20%20%20%20%20%20%7D%20%20%20%20%20%20_this.setState(function%20(prevState)%20%7B%20%20%20%20%20%20%20%20return%20%7B%20%20%20%20%20%20%20%20%20%20current:%20prevState.current%20+%201,%20%20%20%20%20%20%20%20%20%20value:%20prevState.value%20+%20-_this.slideWidth()%20%20%20%20%20%20%20%20%7D;%20%20%20%20%20%20%7D);%20%20%20%20%7D"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path></svg></a></div></div></div></div></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+<script src="./Nova&#39;s Photo Album_files/bundle.js"></script><script src="./Nova&#39;s Photo Album_files/1.chunk.js"></script><script src="./Nova&#39;s Photo Album_files/main.chunk.js"></script><script src="./Nova&#39;s Photo Album_files/main.86b26afebc905c9f996c.hot-update.js"></script>
+
+</body></html>

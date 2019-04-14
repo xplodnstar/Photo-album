@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:3000/album/2 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="shortcut icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">html {
+  box-sizing:border-box;
+}
+
+*, *::before, *::after {
+  box-sizing:inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: indigo;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+</style><style type="text/css">.albumList {
+    width: 750px;
+    margin: 10px auto;
+
+}
+
+.title {
+    width: 100%;
+    height: 100px;
+    background-color: mediumpurple; 
+    padding: 10px 0;
+    position: relative;
+}
+
+.littleWords {
+    position: absolute;
+    top: 46px;
+    left: 210px;
+}
+
+.bigWords {
+    text-align: center;
+}
+
+.displayAlbums {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+}
+
+.albumNames {
+    width: 250px;
+    height: 300px;
+    padding: 25px;
+    word-wrap: break-word;
+    position: relative;
+    border: solid 1px #ccc;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: indigo;
+}
+
+.albumArt {
+    width: 200px;
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    margin: 0 10px 10px;
+}</style><style type="text/css">#albumName {
+    position: relative;
+}
+
+.title {
+    width: 750px;
+    margin: 10px auto;
+}
+
+.albumTitle {
+    width: 100%;
+    text-align: center;
+}
+
+.sideBar {
+    position: absolute;
+    top: 100px;
+    left: 80px;
+}
+
+.listAlbums {
+    list-style: none;
+}
+
+.albumNamesList {
+    margin: 10px 0;
+    width: 200px;
+    height: 32px;
+    background-color: mediumpurple;
+    padding: 5px;
+    border-radius: 5px;
+}
+</style><style type="text/css">.imageList {
+    width: 750px;
+    margin: 10px auto;
+}
+
+.displayImages {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+}
+
+.imageArt {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.imageNames {
+    width: 250px;
+    height: 400px;
+    padding: 25px;
+    text-align: center;
+
+    border: solid 1px #ccc;
+}
+
+</style><style type="text/css">
+.imageTitle {
+    width: 100%;
+    text-align: center;
+    
+}
+
+.lArr {
+    position: absolute;
+    top: 200px;
+    left: 280px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.picBox {
+    width: 750px;
+    position: relative;
+    margin: auto;
+}
+
+.picBox img {
+    width: 100%;
+    
+}
+
+.rArr {
+    position: absolute;
+    top: 200px;
+    left: 1100px;
+    font-size: 50px;
+    font-weight: bold;
+}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div id="page"><div id="albumName"><div class="title"><h1 class="albumTitle">Album Name</h1></div><div class="sideBar"><ul class="listAlbums"><li class="albumNamesList"><a class="link" href="http://localhost:3000/album/1">Heavenly bodies</a></li><li class="albumNamesList"><a class="link" href="http://localhost:3000/album/2">Star Wars</a></li><li class="albumNamesList"><a class="link" href="http://localhost:3000/album/3">Captain Marvel</a></li><li class="albumNamesList"><a class="link" href="http://localhost:3000/album/4">Doctor Who</a></li><li class="albumNamesList"><a class="link" href="http://localhost:3000/album/5">Wonder Woman</a></li><li class="albumNamesList"><a class="link" href="http://localhost:3000/album/6">Portal</a></li></ul></div></div><div class="imageList"><ul class="displayImages"><li class="imageNames"><img src="./React App_files/eso1907a.jpg" alt="First image taken of an actual black hole" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/1">First image taken of an actual black hole</a></li><li class="imageNames"><img src="./React App_files/wonderwoman4.jpg" alt="Wonder Woman" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/2">Wonder Woman</a></li><li class="imageNames"><img src="./React App_files/1533225054-mark-hamill-and-carrie-fisher-star-wars.jpg" alt="Luke and Leia" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/3">Luke and Leia</a></li><li class="imageNames"><img src="./React App_files/captainmarvelbrielarson.jpg" alt="Captain Marvel" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/4">Captain Marvel</a></li><li class="imageNames"><img src="./React App_files/cwypxaqnh7jbpclrr6xs.webp" alt="All the Doctors.... so far" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/5">All the Doctors.... so far</a></li><li class="imageNames"><img src="./React App_files/m_img_27895.jpg" alt="Portal" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/6">Portal</a></li><li class="imageNames"><img src="./React App_files/maxresdefault.jpg" alt="The Official Trailer" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/7">The Official Trailer</a></li><li class="imageNames"><img src="./React App_files/portaltest-11c.jpg" alt="Through the portal" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/8">Through the portal</a></li><li class="imageNames"><img src="./React App_files/wonder-woman-pic.jpg" alt="Statuesque" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/9">Statuesque</a></li><li class="imageNames"><img src="./React App_files/NE45325-3.jpg" alt="Chell" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/10">Chell</a></li><li class="imageNames"><img src="./React App_files/giphy-facebook-s-1071299.jpeg" alt="Matt, the Radar Technician" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/11">Matt, the Radar Technician</a></li><li class="imageNames"><img src="./React App_files/images" alt="Comic book days" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/12">Comic book days</a></li><li class="imageNames"><img src="./React App_files/Goose_Textless_Poster.jpg" alt="Talk to me, Goose!" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/13">Talk to me, Goose!</a></li><li class="imageNames"><img src="./React App_files/photo-1446776653964-20c1d3a81b06" alt="Home from space at night" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/14">Home from space at night</a></li><li class="imageNames"><img src="./React App_files/Captain_Marvel_Comic_Cover.0.jpg" alt="Animated Marvel" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/15">Animated Marvel</a></li><li class="imageNames"><img src="./React App_files/Personajes-Star-WArs-Episodio-VII1.jpg" alt="Rey, BB-8, and Finn running" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/16">Rey, BB-8, and Finn running</a></li><li class="imageNames"><img src="./React App_files/Desktop_Doctor-Who-50-main_tcm25-19443.jpg" alt="50th Anniversary Episode" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/17">50th Anniversary Episode</a></li><li class="imageNames"><img src="./React App_files/photo-1509978778156-518eea30166b" alt="Solar eclipse" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/18">Solar eclipse</a></li><li class="imageNames"><img src="./React App_files/16566262-low-res-doctor-who-series-11.jpg" alt="the current Doctor and her companions" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/19">the current Doctor and her companions</a></li><li class="imageNames"><img src="./React App_files/wonder-woman.jpg" alt="Captain Kirk and WonderWoman" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/20">Captain Kirk and WonderWoman</a></li><li class="imageNames"><img src="./React App_files/12929.webp" alt="The Doctor&#39;s enemies" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/21">The Doctor's enemies</a></li><li class="imageNames"><img src="./React App_files/caroldanversisgay_sorryidontmaketherules_3.png" alt="Besties" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/22">Besties</a></li><li class="imageNames"><img src="./React App_files/photo-1481819613568-3701cbc70156" alt="Full moon" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/23">Full moon</a></li><li class="imageNames"><img src="./React App_files/vizb7rasj1b2vwsebdlj.webp" alt="The companions" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/24">The companions</a></li><li class="imageNames"><img src="./React App_files/wonder-woman-gal-gadot.jpg" alt="Come for it!" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/25">Come for it!</a></li><li class="imageNames"><img src="./React App_files/Glados.jpg" alt="GLaDOS" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/26">GLaDOS</a></li><li class="imageNames"><img src="./React App_files/the-last-jedi-theatrical-poster-tall-a_6a776211.jpeg" alt="Episode VIII" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/27">Episode VIII</a></li><li class="imageNames"><img src="./React App_files/photo-1505312926838-645f295a20e1" alt="The Milky Way" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/28">The Milky Way</a></li><li class="imageNames"><img src="./React App_files/thumb-050-portal-1.jpg" alt="Companion cube" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/29">Companion cube</a></li><li class="imageNames"><img src="./React App_files/_dsf0362_brie_larson_as_captain_marvel_mtny_2019.jpg" alt="Carol Danvers" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/30">Carol Danvers</a></li><li class="imageNames"><img src="./React App_files/weekend-workshop-diy-portal-gun.jpg" alt="Portal gun" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/31">Portal gun</a></li><li class="imageNames"><img src="./React App_files/photo-1447433553548-2fc162393482" alt="Colorful nebula" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/32">Colorful nebula</a></li><li class="imageNames"><img src="./React App_files/photo-1553885129-80454a85ca86" alt="Battle of Lego Hoth" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/33">Battle of Lego Hoth</a></li><li class="imageNames"><img src="./React App_files/71fPjXNWTCL._SL1200_.jpg" alt="The TARDIS" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/34">The TARDIS</a></li><li class="imageNames"><img src="./React App_files/gal-gadot-wonder-woman-today-tease-4-180613_711673b7dd891415a88be754436ae233.jpg" alt="What a Gal!" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/35">What a Gal!</a></li><li class="imageNames"><img src="http://localhost:3000/album/src/components/PortalBlackHole.jpg" alt="The other end of the universe" class="imageArt"> <br><a class="link" href="http://localhost:3000/image/36">The other end of the universe</a></li></ul></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="http://localhost:3000/static/js/1.chunk.js"></script><script src="./React App_files/main.chunk.js"></script>
+
+</body></html>

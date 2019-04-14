@@ -1,0 +1,26 @@
+.imageList {
+    width: 750px;
+    margin: 10px auto;
+}
+
+.displayImages {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+}
+
+.imageArt {
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+.imageNames {
+    width: 250px;
+    height: 400px;
+    padding: 25px;
+    text-align: center;
+
+    border: solid 1px #ccc;
+}
+

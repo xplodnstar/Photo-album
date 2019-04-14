@@ -1,0 +1,51 @@
+.imageTitle {
+    width: 100%;
+    text-align: center;
+    
+}
+
+.picBox {
+    width: 750px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    margin: auto;
+}
+
+.lArr {
+    position: absolute;
+    top: 200px;
+    left: 263px;
+    font-size: 50px;
+    font-weight: bold;
+    color: indigo;
+    /* margin: 50px 10px; */
+}
+
+.imageBox {
+    width: 750px;
+    position: relative;    
+    /* transform: translateX(750px); */
+    transition: transform ease-out 1s;
+    color: indigo;
+}
+
+#picture {
+    width: 100%;
+
+}
+
+.rArr {
+    position: absolute;
+    top: 200px;
+    left: 1100px;
+    font-size: 50px;
+    font-weight: bold;   
+    color: indigo;     
+    /* margin: 50px 10px; */
+}
+
+Link {
+    color: indigo;
+}
