@@ -12,6 +12,7 @@
 
 .imageArt {
     width: 200px;
+    max-height: 275px;
     margin-bottom: 10px;
 }
 
