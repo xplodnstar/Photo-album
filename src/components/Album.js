@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-// import axios from 'axios'
 import { getAlbumList, getAlbum } from '../actions/Calls'
 import '../styles/Album.css';
 
@@ -10,28 +9,6 @@ class Album extends Component {
         aName: '',
         aDesc: ''
     }
-
-    // getAlbum = (id) => {
-    //     axios.get('http://localhost:3001/albums').then(resp => {
-    //         console.log(resp.data)
-    //         this.setState({
-    //             albums: resp.data,
-    //         })
-    //     })
-    // }
-
-    // getImage = (id) => {
-    //     // const id = this.props.match.params.id
-    //     axios.get(`http://localhost:3001/albums/${id}?_embed=images`).then(resp => {
-    //         // axios.get(`http://localhost:3001/images`).then(resp => {
-    //         console.log(resp)
-    //         this.setState({
-    //             images: resp.data.images,
-    //             name: resp.data.name,
-    //             desc: resp.data.description
-    //         })
-    //     })
-    // }
 
     componentDidMount() {
         getAlbumList().then(albums => {
@@ -43,17 +20,21 @@ class Album extends Component {
                 aDesc: item.aDesc
             })
         })
-
-        // this.getAlbum(this.props.match.params.id)
-        // this.getImage(this.props.match.params.id)
     }
 
-    // componentWillReceiveProps(newProps) {
-    //     if (newProps.match.params.id !== this.props.match.params.id) {
-    //         // this.getAlbum(newProps.match.params.id)
-    //         // this.getImage(newProps.match.params.id)
-    //     }
-    // }
+    componentWillReceiveProps(newProps) {
+        if (newProps.match.params.id !== this.props.match.params.id) {
+            getAlbumList().then(albums => {
+                this.setState({ albums })
+            })
+            getAlbum().then(item => {
+                this.setState({
+                    aName: item.aName,
+                    aDesc: item.aDesc
+                })
+            })
+        }
+    }
 
     render() {
         return (
