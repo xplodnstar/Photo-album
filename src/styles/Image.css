@@ -18,16 +18,13 @@
 }
 
 .lArr {
-    position: absolute;
-    top: 200px;
-    left: 263px;
+    margin: 100px -70px;
     font-size: 50px;
     font-weight: bold;
 }
 
 .imageBox {
-    width: 750px;
-    position: relative;    
+    width: 750px;  
 }
 
 #picture {
@@ -35,9 +32,7 @@
 }
 
 .rArr {
-    position: absolute;
-    top: 200px;
-    left: 1100px;
+    margin: 100px -70px;
     font-size: 50px;
     font-weight: bold;  
 }
