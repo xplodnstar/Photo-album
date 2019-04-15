@@ -14,15 +14,10 @@ class Image extends Component {
         url: '',
         name: '',
         albumId: '',
-        current: 0,
+        current: '',
         prev: '',
         next: ''
     }
-
-    // current = image index. 
-    // prev/next is +- 1. 
-    // Need to translate index no to id for use in link.
-    // create left and right stops
 
     getImage = (id) => {
         axios.get(`http://localhost:3001/images/${id}`).then(resp => {
@@ -30,74 +25,54 @@ class Image extends Component {
                 url: resp.data.url,
                 name: resp.data.name,
                 albumId: resp.data.albumId,
-                Imageid: resp.data.id,
+                imageId: resp.data.id,
             })
-            console.log(this.state.url)
-            console.log(this.state.name)
-            console.log(this.state.albumId)
-            console.log(this.state.Imageid)
+
+            this.getAlbum(resp.data.albumId).then(images => {
+                const currentIndex = images.findIndex(item => item.id === Number(id))
+                // const current = images[currentIndex].url
+                let prevIndex, nextIndex
+
+                if (currentIndex === 0) {
+                    prevIndex = 0
+                    // prevIndex = images.length - 1
+                } else {
+                    prevIndex = currentIndex - 1
+                }
+
+                if (currentIndex === images.length - 1) {
+                    nextIndex = images.length - 1
+                    // nextIndex = 0
+                } else {
+                    nextIndex = currentIndex + 1
+                }
+
+                const prev = images[prevIndex].id
+                const next = images[nextIndex].id
+
+                this.setState({
+                    prev: prev,
+                    next: next
+                })
+            })
         })
     }
 
     getAlbum = (albumId) => {
-        axios.get(`http://localhost:3001/albums/${this.state.albumId}`).then(resp => {
-            this.setState({
-                images: resp.data,
+        return new Promise((resolve, reject) => {
+            axios.get(`http://localhost:3001/images?albumId=${this.state.albumId}`).then(resp => {
+                resolve(resp.data)
             })
-            console.log(this.state.images)
-        })
-    }
-
-    getCurrent = (id) => {
-        this.setState({
-            current: this.state.images.findIndex(item => item.id = id)
-        })
-        console.log(this.state.current)
-    }
-
-    goToPrevSlide = () => {
-        this.getCurrent(this.props.match.params.id)
-        if (this.state.current === 0)
-            return;
-
-        this.setState({
-            prev: this.state.images[this.state.current - 1].id
-        })
-    }
-
-    goToNextSlide = () => {
-        this.getCurrent(this.props.match.params.id)
-        if (this.state.current === this.state.images.length - 1) {
-            return;
-        }
-
-        this.setState({
-            next: this.state.images[this.state.current + 1].id,
         })
     }
 
     componentDidMount() {
         this.getImage(this.props.match.params.id)
-        this.getAlbum(this.props.match.params.albumId)
-        // this.getCurrent(this.props.match.params.Imageid)
-        // this.goToPrevSlide(this.props.match.params.id)
-        // this.goToNextSlide(this.props.match.params.id)
-
     }
 
     componentWillReceiveProps(newProps) {
         if (newProps.match.params.id !== this.props.match.params.id) {
             this.getImage(newProps.match.params.id)
-            this.getAlbum(newProps.match.params.albumId)
-            this.getCurrent(this.props.match.params.Imageid)
-
-            // console.log(this.state.url)
-            // console.log(this.state.name)
-            // console.log(this.state.albumId)
-            // console.log(this.state.images)
-            // console.log(this.state.current)
-            // console.log(this.state.prev)
-            // console.log(this.state.next)
         }
     }
 
@@ -105,6 +80,7 @@ class Image extends Component {
         return (
             <div className="box">
                 <div className="title">
+                    <Link to={"/album/" + this.state.albumId} className="albumLink">&nbsp;&nbsp;Back to Album</Link>
                     <h1 className="imageTitle">{this.state.name}</h1>
                 </div>
                 <div className="picBox">

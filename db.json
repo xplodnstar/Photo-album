@@ -236,10 +236,10 @@
     },
     {
       "id": 29,
-      "name": "Companion cube",
-      "url": "https://mforum.ist/media/portal-wallpaper.2432/full",
-      "site": "mforum.ist, Valve",
-      "albumId": 6
+      "name": "Episode IX",
+      "url": "https://www.newshub.co.nz/home/entertainment/2019/04/stars-wars-episode-ix-the-rise-of-skywalker-trailer-drops/_jcr_content/par/image.dynimg.full.q75.jpg/v1555095180544/star-wars-episode-IX-1120.jpg",
+      "site": "NewsHub.com, Lucasfilm/Disney",
+      "albumId": 2
     },
     {
       "id": 30,
@@ -286,7 +286,7 @@
     {
       "id": 36,
       "name": "The other end of the universe",
-      "url": "./src/components/PortalBlackHole.jpg",
+      "url": "http://imageproxy.ifcdn.com/crop:x-20,resize:320x,crop:x800,quality:90x75/images/3742e049832cb9b4675ddf4e51da784c01d85a4492ac11a1ae3b8e93ffb2c31e_1.jpg",
       "site": "Facebook.com, meme",
       "albumId": 6
     }
