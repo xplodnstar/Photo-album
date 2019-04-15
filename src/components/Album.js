@@ -7,7 +7,8 @@ class Album extends Component {
     state = {
         albums: [],
         images: [],
-        name: ''
+        name: '',
+        desc: ''
     }
 
     getAlbum = (id) => {
@@ -26,7 +27,8 @@ class Album extends Component {
             console.log(resp)
             this.setState({
                 images: resp.data.images,
-                name: resp.data.name
+                name: resp.data.name,
+                desc: resp.data.description
             })
         })
     }
@@ -49,6 +51,7 @@ class Album extends Component {
                 <div id="albumName">
                     <div className="title">
                         <h1 className="albumTitle">{this.state.name}</h1>
+                        <p className="albumDesc">{this.state.desc}</p>
                     </div>
                     <div className="sideBar">
                         <ul className="listAlbums">
