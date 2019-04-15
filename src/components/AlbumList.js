@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios'
+import { getAlbumList } from '../actions/Calls'
 import '../styles/AlbumList.css';
 
 class AlbumList extends Component {
@@ -9,14 +9,11 @@ class AlbumList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3001/albums').then(resp => {
-            this.setState({
-                albums: resp.data
-            })
+        getAlbumList().then(albums => {
+            this.setState({ albums })
         })
     }
 
-    // const AlbumList = props => (
     render() {
         return (
             <Fragment>
@@ -27,10 +24,10 @@ class AlbumList extends Component {
                     <ul className="displayAlbums">
                         {
                             this.state.albums.map(album => (
-                                <li key={album.id} className="albumNames">
-                                    <Link to={"/album/" + album.id}><img src={album.img} alt={album.name} className="albumArt" /></Link><br></br>
-                                    <p className="link"><Link to={"/album/" + album.id} className="link">{album.name}</Link></p>
-                                    <p className="description">{album.description}</p>
+                                <li key={album.aId} className="albumNames">
+                                    <Link to={"/album/" + album.aId}><img src={album.aArt} alt={album.aName} className="albumArt" /></Link><br></br>
+                                    <p className="link"><Link to={"/album/" + album.aId} className="link">{album.aName}</Link></p>
+                                    <p className="description">{album.aDesc}</p>
                                 </li>
                             ))
                         }
