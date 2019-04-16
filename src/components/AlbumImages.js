@@ -5,23 +5,25 @@ import '../styles/AlbumImages.css';
 
 class AlbumImages extends Component {
     state = {
-        images: [],
-        // name: ''
+        images: []
+    }
+
+    getAlbum = (id) => {
+        getAlbum(id).then(images => {
+            this.setState(images)
+        })
     }
 
 
     componentDidMount() {
         const id = this.props.match.params.id
-        getAlbum(id)
-        getAlbum(id).then(images => {
-            this.setState({ images })
-        })
+        this.getAlbum(id)
     }
 
     componentWillReceiveProps(newProps) {
         if (newProps.match.params.id !== this.props.match.params.id) {
             const id = newProps.match.params.id
-            getAlbum(id)
+            this.getAlbum(id)
         }
     }
 

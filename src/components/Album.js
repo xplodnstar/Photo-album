@@ -10,29 +10,31 @@ class Album extends Component {
         aDesc: ''
     }
 
-    componentDidMount() {
+    getAlbumList = () => {
         getAlbumList().then(albums => {
             this.setState({ albums })
         })
-        getAlbum().then(item => {
+    }
+
+    getAlbum = (id) => {
+        getAlbum(id).then(images => {
             this.setState({
-                aName: item.aName,
-                aDesc: item.aDesc
+                aName: images.aName,
+                aDesc: images.aDesc
             })
         })
     }
 
+    componentDidMount() {
+        const id = this.props.match.params.id
+        this.getAlbumList()
+        this.getAlbum(id)
+    }
+
     componentWillReceiveProps(newProps) {
         if (newProps.match.params.id !== this.props.match.params.id) {
-            getAlbumList().then(albums => {
-                this.setState({ albums })
-            })
-            getAlbum().then(item => {
-                this.setState({
-                    aName: item.aName,
-                    aDesc: item.aDesc
-                })
-            })
+            const id = newProps.match.params.id
+            this.getAlbum(id)
         }
     }
 

@@ -11,6 +11,8 @@ class Image extends Component {
     state = {
         images: [],
         iArt: '',
+        iName: '',
+        iId: '',
         albumId: null,
         prev: null,
         next: null
@@ -24,13 +26,13 @@ class Image extends Component {
 
     componentDidMount() {
         const id = this.props.match.params.id
-        getImage(id)
+        this.getImage(id)
     }
 
     componentWillReceiveProps(newProps) {
         if (newProps.match.params.id !== this.props.match.params.id) {
             const id = newProps.match.params.id
-            getImage(id)
+            this.getImage(id)
         }
     }
 
@@ -39,14 +41,14 @@ class Image extends Component {
             <div className="box">
                 <div className="title">
                     <Link to={"/album/" + this.state.albumId} className="albumLink">&nbsp;&nbsp;Back to Album</Link>
-                    <h1 className="imageTitle">{this.state.images.iName}</h1>
+                    <h1 className="imageTitle">{this.state.iName}</h1>
                 </div>
                 <div className="picBox">
                     <div className="lArr">
                         <Link to={"/image/" + this.state.prev}><FaArrowLeft /></Link>
                     </div>
                     <div className="imageBox">
-                        <img src={this.state.iArt} alt={this.state.images.iName} id="picture" />
+                        <img src={this.state.iArt} alt={this.state.iName} id="picture" />
                     </div>
                     <div className="rArr">
                         <Link to={"/image/" + this.state.next} ><FaArrowRight /></Link>

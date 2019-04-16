@@ -17,9 +17,9 @@ export function getAlbumList() {
     })
 }
 
-export function getAlbum(aId) {
+export function getAlbum(id) {
     return new Promise((resolve, reject) => {
-        axios.get(`http://localhost:3001/albums/${aId}?_embed=images`).then(resp2 => {
+        axios.get(`http://localhost:3001/albums/${id}?_embed=images`).then(resp2 => {
             const aName = resp2.data.name
             const aDesc = resp2.data.description
 
@@ -33,39 +33,46 @@ export function getAlbum(aId) {
                     albumId: item2.albumId
                 }
             })
-            resolve(
+            resolve({
                 images, aName, aDesc
-            )
+
+            })
         })
     })
 }
 
-export function getImage(iId) {
+export function getImage(id) {
     return new Promise((resolve, reject) => {
-        axios.get(`http://localhost:3001/images/${iId}`).then(resp3 => {
+        axios.get(`http://localhost:3001/images/${id}`).then(resp3 => {
             const albumId = resp3.data.albumId
-            const image = resp3.data.url
+            const iArt = resp3.data.url
+            const iName = resp3.data.name
+            const iId = resp3.data.id
 
             axios.get(`http://localhost:3001/images?albumId=${albumId}`).then(resp4 => {
                 const images = resp4.data
-                const current = images.findIndex(i => i.iId === Number(iId))
+                const current = images.findIndex(i => i.id === Number(id))
 
-                let prev, next
+                let prevPic, nextPic
 
                 if (current === 0) {
-                    prev = 0
+                    prevPic = 0
                 } else {
-                    prev = current - 1
+                    prevPic = current - 1
                 }
 
                 if (current === images.length - 1) {
-                    next = images.length - 1
+                    nextPic = images.length - 1
                 } else {
-                    next = current + 1
+                    nextPic = current + 1
                 }
-                resolve(
-                    image, albumId, prev, next
-                )
+
+                const prev = images[prevPic].id
+                const next = images[nextPic].id
+
+                resolve({
+                    images, iArt, albumId, iName, iId, prev, next
+                })
             })
 
         })
